@@ -1,4 +1,4 @@
-string-array
+String Array
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -17,18 +17,36 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'validate.io-string-array' );
+var isStringArray = require( 'validate.io-string-array' );
 ```
 
-#### foo( value )
+#### isStringArray( value )
 
-What does this function do?
+Validates if a `value` is a `string array`.
+
+``` javascript
+var arr = ['a','b','c'];
+
+var bool = isStringArray( value );
+// returns true
+```
+
+__Note__: the method will return `false` for an empty `array`.
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'validate.io-string-array' );
+var isStringArray = require( 'validate.io-string-array' );
+
+console.log( isStringArray( ['beep','','foo'] ) );
+// returns true
+
+console.log( isStringArray( [] ) );
+// returns false
+
+console.log( isStringArray( [1,2,3] ) );
+// returns false
 ```
 
 To run the example code from the top-level application directory,
